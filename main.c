@@ -10,15 +10,21 @@
 int main(int argc, char* argv[]) {
 	// stack stores the lines to print out
 	stack_t *s = initstack();
+	if(argv[1] != NULL){
+		open(argc);
+		for(int i = 0; i < 8192; i++){
+			push(s, argv[i]);
+		}
+	}
 
-	push(s, "Hello1");
-	push(s, "Hello2");
-	push(s, "Hello3");
-
-	// print stack
 	printstack(s);
 
-	// free up stack
-	freestack(s);
+
+	open(s);
+	printstack(s);
+	readPath(argv[1]);
+
+	// // free up stack
+	// freestack(s);
 	return 0;
 }

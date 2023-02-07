@@ -6,5 +6,36 @@
 #include <unistd.h>
 #include "ls2.h"
 
+//Opens a path
+//@param path is the desired path to a file
 
-// TODO: function definitions here for ls2
+DIR* openPath(char*path){
+    return opendir(path);
+}
+//Reads a path
+//@param path is the desired path to a file
+void readPath(char*path){
+    DIR* directory = openPath(path);
+    openPath(directory);
+    struct dirent *file;
+    file = readdir(directory);
+    while(file != NULL){
+        printf("%s", file->d_name);
+    }
+    closedir(directory);
+
+}
+//Closes a path
+//@param path is the desired path to a file
+void closePath(DIR* directory){
+    closedir(directory);
+}
+
+
+
+
+
+
+
+
+

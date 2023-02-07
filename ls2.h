@@ -8,5 +8,9 @@
 #define INDENT "    "
 
 // TODO: Function declarations here for ls2
+//find the limit stack
 
-#endif
+DIR* openPath(char*path);
+void readPath(char*path);
+void closePath(DIR* directory);
+#endif 
